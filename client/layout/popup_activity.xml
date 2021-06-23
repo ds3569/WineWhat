@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!-- 타이틀바 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="이 와인 어떠셨나요?"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:background="#760c0c "
+            android:layout_width="match_parent"
+            android:layout_height="53dp" />
+    </LinearLayout>
+    <!-- //end 타이틀바 -->
+
+    <!-- Notice -->
+    <LinearLayout
+        android:padding="24dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f1d2e7">
+
+        <TextView
+            android:id="@+id/txtText"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:alpha="0.87"
+            android:gravity="center"
+            android:layout_marginBottom="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="0.0"
+            android:progressTint="#d9598c"
+            android:progressBackgroundTint="#f2f2f2"
+            android:stepSize="1"
+            android:isIndicator="false"
+            android:layout_gravity="center"
+            style="@style/Widget.AppCompat.RatingBar"
+            android:id="@+id/rating"/>
+    </LinearLayout>
+    <!-- Notice -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#f1d2e7"
+        >
+
+        <Button
+            android:text="취소"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="#f1d2e7"
+            android:layout_gravity="left"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_marginLeft="25dp"
+            android:onClick="mOnCloseNO"/>
+
+
+        <Button
+            android:text="확인"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:padding="10dp"
+            android:gravity="right"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="140dp"
+            android:background="#f1d2e7"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:onClick="mOnCloseOK"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
