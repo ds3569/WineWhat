@@ -36,7 +36,7 @@ def add_sample(cat, fname, is_train):
     # 각도를 조금 변경한 파일 추가
     # 회전하기
 
-    for ang in range(-50, 50, 1):
+    for ang in range(-25, 25, 5):
         img2 = img.rotate(ang)
         data = np.asarray(img2)
         X.append(data)
@@ -68,7 +68,7 @@ for idx, cat in enumerate(categories):
 random.shuffle(allfiles)
 th = math.floor(len(allfiles) * 0.6)
 train = allfiles[0:th]
-test  = allfiles[th:]
+test = allfiles[th:]
 X_train, y_train = make_sample(train, True)
 X_test, y_test = make_sample(test, False)
 xy = (X_train, X_test, y_train, y_test)
