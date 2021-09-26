@@ -11,25 +11,29 @@ def updatereivew(userID, wineID, reviewPoint):
     )
 
     cursor = review.cursor(pymysql.cursors.SSCursor)
+    if (reviewPoint > 0):
+        # json update
+        sql = "update reviewtest set review = JSON_REPLACE(review, '$.\"%s\"', %s) where id = %s;"
 
-    # json update
-    sql = "update reviewtest set review = JSON_REPLACE(review, '$.\"%s\"', %s) where id = %s;"
+        """# json insert
+        sql2 = "update reviewtest set review = JSON_INSERT(review, '$.\"%s\"', %s) where id = %s;"
+        # json remove
+        sql3 = "update reviewtest set review = JSON_REMOVE(review, '$.\"%s\"') where id = %s;"""""
 
-    """# json insert
-    sql2 = "update reviewtest set review = JSON_INSERT(review, '$.\"%s\"', %s) where id = %s;"
-    # json remove
-    sql3 = "update reviewtest set review = JSON_REMOVE(review, '$.\"%s\"') where id = %s;"""""
+        data = [(wineID, reviewPoint, userID)]
+        cursor.executemany(sql, data)
+        review.commit()
 
-    data = [(wineID, reviewPoint, userID)]
-    cursor.executemany(sql, data)
-    review.commit()
+        sql = "SELECT * FROM reviewtest;"
+        cursor.execute(sql)
+        dateSet = cursor.fetchall()
 
-    sql = "SELECT * FROM reviewtest;"
-    cursor.execute(sql)
-    dateSet = cursor.fetchall()
+        print(dateSet)
+        return "success"
+    else:
+        return "success"
 
-    print(dateSet)
-    return "success"
+
 
 
 def makedefualtreviewdata(userID):

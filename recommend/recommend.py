@@ -2,6 +2,7 @@ import numpy as np
 from ast import literal_eval
 import getdata
 import operator
+import graphModule
 
 #코싸인 유사도
 def cosine_similarity(a, b):
@@ -28,7 +29,8 @@ def getSimilarUser(userInfo, alluserID, allUserReviews):
                 similarUser[alluserID[i]] = allUserReviews[i]
 
         """print(cosine_similarity(userReview, allUserReviews[i])) #코싸인 유사도 확인용
-    print("=======")"""
+        print("=======")"""
+
 
 
     #추천 리스트에 자기 자신 밖에 없을 경우, 추천 리스트 Null
@@ -44,7 +46,7 @@ def getSimilarUser(userInfo, alluserID, allUserReviews):
     #자기 자신 제거
     del similarUser[userID[0]]
 
-    #print(similarUser)
+    print(similarUser)
 
     return similarUser
 
@@ -53,6 +55,7 @@ def getreviewAverage(similarUser):
 
     averageList = []
     reViewArray = list(similarUser.values())
+
     for i in range(0, len(reViewArray[0])):
         sum = 0
         for j in range(0, len(reViewArray)):
@@ -60,6 +63,50 @@ def getreviewAverage(similarUser):
         averageList.append(sum / len(reViewArray))
 
     return averageList
+
+#유사한 유저 그래프 데이터
+def getreviewgraph(similarUser):
+
+    graphList = []
+    averList = []
+    delIndex = []
+    sweet = 0
+    acidic = 0
+    body = 0
+    tannin = 0
+
+    allUserArray = list(similarUser.values())
+    userArray = list(similarUser.keys()) #유사한 유저 ID
+
+
+    #리뷰하지 않은 와인 제거
+    for i in range(0, len(allUserArray)):
+        if sum(allUserArray[i]) == 0:
+            delIndex.append(i)
+
+    delIndex.reverse()
+
+    for i in delIndex:
+        del userArray[i]
+
+
+    for i in range(0, len(userArray)):
+        graphList.append(graphModule.getFavorList(userArray[i])) #유사한 유저 그래프 데이터
+
+    print(graphList)
+    #유사한 유저 그래프 데이터 평균
+    for i in range(0, len(userArray)):
+        sweet = sweet + graphList[i][0]
+        acidic = acidic + graphList[i][1]
+        body = body + graphList[i][2]
+        tannin = tannin + graphList[i][3]
+    averList.append(sweet/len(userArray))
+    averList.append(acidic/len(userArray))
+    averList.append(body/len(userArray))
+    averList.append(tannin/len(userArray))
+
+    return averList
+
 
 #사용자가 리뷰한 와인을 추천 목록에서 삭제
 def unReviewed(userInfo, reviewAverage):
@@ -73,17 +120,20 @@ def unReviewed(userInfo, reviewAverage):
         if userReview[i] == 0:
            unReviewedList[i + 1] = reviewAverage[i]
 
+
     return unReviewedList
 
 #추천 목록 정렬 후, 와인 ID 목록 return
 def sortRecommend(unReviedList):
-    sortedList = sorted(unReviedList.items(), key=operator.itemgetter(0), reverse=True)
+    sortedList = sorted(unReviedList.items(), key=operator.itemgetter(1), reverse=True)
     wineIDList = []
 
-    #print(sortedList)
+    print(sortedList)
 
     for i in range(0, len(sortedList)):
         wineIDList.append(sortedList[i][0])
+
+    print(wineIDList)
 
     return wineIDList
 
@@ -104,6 +154,33 @@ def recommendModule(username):
     sortedList = sortRecommend(unReviewedList)
 
     return sortedList
+
+def usersGraph(username):
+    # 데이터 셋팅
+    dateSet = getdata.getData()
+    allUserID = getdata.makeUserIDList(dateSet)
+    allUserReviews = getdata.makeReviewArray(dateSet)
+    userInfo = getdata.getUserInfo(username, dateSet)
+
+    # 유사도 연산
+    similarUser = getSimilarUser(userInfo, allUserID, allUserReviews)
+
+
+    return getreviewgraph(similarUser)
+
+def userInfo(username):
+    # 데이터 셋팅
+    dateSet = getdata.getData()
+    userInfo = getdata.getUserInfo(username, dateSet)
+    userReview = list(userInfo.values())  # userInfo가 Dictionary이므로 cosine_similarity 함수에서 사용할 수 있도록 lsit 형태로 전환
+    userReview = literal_eval(str(userReview[0]))
+    userReview = list(userReview.values())
+
+    return userReview
+
+
+
+
 
 
 

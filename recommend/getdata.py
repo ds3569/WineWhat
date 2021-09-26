@@ -48,7 +48,7 @@ def getUserInfo(username, dateSet):
         if dateSet[i][0] == username:
             userInfo[username] = dateSet[i][1]
 
-    print(userInfo)
+
     return userInfo;
 
 
