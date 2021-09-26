@@ -25,20 +25,10 @@
             >
 
             <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="end"
-            android:src="@drawable/logosmall"
-            />
-
-            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="fill"
-                android:src="@drawable/wineinfo"
-                android:layout_margin="10dp"
+                android:src="@drawable/logoinfo"
+                android:layout_margin="3dp"
                 />
 
             <ImageView
@@ -49,6 +39,11 @@
                 android:layout_margin="10dp"
                 android:id="@+id/wineImage"
                 />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:src="@drawable/proinfo"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -141,20 +136,31 @@
                 android:layout_margin="5dp"
                 >
             </View>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/sweet"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="30dp"
-                    />
+                android:id="@+id/food"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_margin="5dp"
+                >
+            </View>
 
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sweet"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                />
+
 
 
 
@@ -206,16 +212,6 @@
                 android:textSize="20sp"
                 android:layout_marginLeft="30dp"
                 />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="start"
-                android:id="@+id/home"
-                android:layout_marginLeft="30dp"
-                android:src = "@drawable/home"
-                ></ImageView>
 
 
 

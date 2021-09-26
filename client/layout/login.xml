@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -16,54 +15,62 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="fill"
-            android:src="@drawable/login"
-            android:layout_margin="10dp"
-            />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="end"
-            android:src="@drawable/logosmall"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/login" />
 
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            android:layout_margin="10dp"
             android:hint="ID"
-            android:layout_weight="10"
-            android:id="@+id/userID">
-        </EditText>
+            android:id="@+id/userID"
+            />
+
+
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="PassWard"
-            android:layout_weight="1"
-            android:inputType="textPassword"
-            android:id="@+id/userPassward">
-        </EditText>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:src="@drawable/logbutton"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:id="@+id/login"
-            />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:src="@drawable/regibutton"
-            android:id="@+id/regi"
+            android:layout_weight="10"
+            android:hint="PassWard"
+            android:inputType="textPassword"
+            android:id="@+id/userPassward"
             />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
 
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="100dp"
+                android:src="@drawable/loginbutton"
+                android:background="#FFFFFF"
+                android:id="@+id/login"
+                />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/register"
+                android:background="#FFFFFF"
+                android:id="@+id/regi"
+                />
+
+        </LinearLayout>
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

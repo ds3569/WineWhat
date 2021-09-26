@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -18,45 +18,52 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="fill"
-            android:src="@drawable/regi"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
-            />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_gravity="end"
-            android:src="@drawable/logosmall"
-            />
+            android:src="@drawable/registermain" />
 
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            android:layout_margin="10dp"
             android:hint="ID"
-            android:layout_weight="10"
-            android:id="@+id/userID_re">
-        </EditText>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="PassWard"
-            android:layout_weight="1"
-            android:inputType="textPassword"
-            android:id="@+id/userPassward_re">
-        </EditText>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:src="@drawable/next"
-            android:id="@+id/next"
+            android:id="@+id/userID_re"
             />
 
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            android:layout_margin="10dp"
+            android:hint="PassWard"
+            android:inputType="textPassword"
+            android:id="@+id/userPassward_re"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="3"
+                android:src="@drawable/join"
+                android:background="#FFFFFF"
+                android:id="@+id/next"/>
+
+
+
+        </LinearLayout>
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

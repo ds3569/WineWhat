@@ -9,68 +9,101 @@
     <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/ScrollView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        >
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-
-            tools:context=".MainActivity"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_marginTop="50dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/main"
-                android:gravity="center"
-                android:id="@+id/logo"
-                ></ImageView>
+            tools:context=".MainActivity">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/winesearch"
-                android:gravity="center"
-                android:background="@android:color/transparent"
-                android:id="@+id/capture"
-                ></ImageView>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:src="@drawable/reco"
+                android:src="@drawable/newlogo2"
                 android:layout_margin="10dp"
-                android:id="@+id/recommend"
+                android:layout_gravity="left"
                 />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:id="@+id/recoim"
-                ></ImageView>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:src="@drawable/recommendb"
-                android:id="@+id/anotherreco">
-            </ImageView>
 
-    </LinearLayout>
-</ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/maincam7"
+                    android:background="#FFFFFF"
+                    android:id="@+id/capture"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/mypage3"
+                        android:gravity="center"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/btn_mypage"
+                        android:background="@android:color/transparent"
+                        />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/recommend3"
+                        android:gravity="center"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginBottom="6dp"
+                        android:id="@+id/btn_reviewList"
+                        android:background="@android:color/transparent"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:src="@drawable/comt3"
+                            android:layout_marginTop="40dp"
+                            />
+
+
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pops"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
