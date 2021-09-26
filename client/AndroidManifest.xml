@@ -37,8 +37,9 @@
         <activity android:name=".register"></activity>
         <activity android:name=".wineInfo"></activity>
         <activity android:name=".PopupActivity" android:theme="@android:style/Theme.Dialog"></activity>
-        <activity android:name=".info" android:theme="@android:style/Theme.Dialog"></activity>
-        <activity android:name=".myPage" android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name=".myPage"></activity>
+        <activity android:name=".reviews"></activity>
+
 
 
     </application>
