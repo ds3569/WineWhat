@@ -28,7 +28,7 @@ def login(user_ID,user_Passward):
             checker+=1
     #id,pw 일치
     if checker == 1:
-        print('login sucess : '+(user_ID))
+        print('login success : '+ (user_ID))
         return "success"
     #id,pw 불일치
     else:
